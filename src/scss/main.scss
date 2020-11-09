@@ -1,0 +1,155 @@
+@import './core/fonts';
+@import './core/variables';
+@import './core/placeholders';
+@import './core/reset';
+
+html,
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: $light-gray;
+
+  min-width: 320px;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  @media only screen and (min-width: 1100px) {
+    max-width: 1440px;
+  }
+}
+
+.header {
+  text-align: center;
+  margin: 30px 0 74px 0;
+  color: $dark-blue;
+  @media only screen and (min-width: 1100px) {
+    margin: 40px auto 50px auto;
+    width: 600px;
+  }
+
+  &__subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    opacity: 0.7;
+    @media only screen and (min-width: 1100px) {
+      font-size: 30px;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    @media only screen and (min-width: 1100px) {
+      font-size: 2.2rem;
+    }
+  }
+
+  &__presentation {
+    opacity: 0.6;
+    font-size: 1.1rem;
+    font-weight: 400;
+  }
+}
+
+.cards-container {
+  margin: 20px 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media only screen and (min-width: 1100px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0 1fr;
+    grid-template-areas:
+      '. team-builder .'
+      'supervisor none calculator'
+      '. karma . ';
+    justify-items: center;
+  }
+}
+
+.card {
+  @extend %box-shadow;
+  color: $dark-blue;
+  width: 80%;
+  max-width: 320px;
+
+  border-top: 4px solid;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+
+  @media only screen and (min-width: 1100px) {
+    max-width: 460px;
+  }
+
+  &__content {
+    text-align: initial;
+  }
+
+  &__title {
+    font-size: 1.4rem;
+    @media only screen and (min-width: 1100px) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__desc {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    @media only screen and (min-width: 1100px) {
+      font-size: 1rem;
+    }
+  }
+
+  &__image-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16%;
+  }
+
+  &__image {
+    width: 60px;
+  }
+}
+
+#supervisor {
+  border-top-color: $cyan;
+  grid-area: supervisor;
+  justify-self: end;
+}
+
+#team-builder {
+  border-top-color: $red;
+  grid-area: team-builder;
+  @media only screen and (min-width: 1100px) {
+    margin-bottom: 40px;
+  }
+}
+
+#karma {
+  border-top-color: $orange;
+  grid-area: karma;
+}
+
+#calculator {
+  border-top-color: $blue;
+  grid-area: calculator;
+  justify-self: start;
+}
+
+.footer {
+  .attribution {
+    font-size: 1.2rem;
+  }
+}
